@@ -1,0 +1,368 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --bg-color: #e3dcf2;
+    --primary-text: #4b3c6b;
+    --secondary-text: #6b5f88;
+    --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    overflow: hidden; /* Prevents scrollbars from decorative elements */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Header & Navigation --- */
+header {
+    padding: 2rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+nav ul a {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    transition: color 0.3s ease;
+}
+
+nav ul a:hover {
+    color: var(--primary-text);
+}
+
+/* --- Buttons --- */
+.btn {
+    padding: 0.7rem 1.8rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.btn-signin {
+    background: var(--white);
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+/* --- Main Content --- */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.content-left, .content-right {
+    flex-basis: 50%;
+}
+
+/* --- Left Content (Headline & Podium) --- */
+.content-left h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--primary-text);
+}
+
+.content-left .subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 1.5rem 0;
+    color: var(--secondary-text);
+}
+
+.podium {
+    width: 250px;
+    height: 100px;
+    background-color: var(--white);
+    border-radius: 125px / 50px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    margin-top: 3rem;
+}
+.podium::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+/* --- Right Content (Details & CTA) --- */
+.content-right {
+    position: relative;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(170, 155, 202, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.date {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+.date h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.date span {
+    font-size: 2rem;
+}
+.date p {
+    font-weight: 600;
+}
+
+.content-right h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.content-right .description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--secondary-text);
+    margin-bottom: 0;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #e86a92, #a37acc);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(163, 122, 204, 0.4);
+}
+
+.btn-secondary {
+    border: 2px solid var(--secondary-text);
+    color: var(--secondary-text);
+}
+
+        /* --- Hover Effects for Buttons --- */
+
+        /* Menambahkan transisi agar perubahan warna lebih halus */
+        .btn {
+            transition: all 0.3s ease;
+            cursor: pointer; /* Menjadikan kursor sebagai pointer saat di atas tombol */
+        }
+
+        /* Efek untuk Tombol Utama (Sign In Ungu) */
+        .btn-primary:hover {
+            background: var(--white); /* Latar belakang menjadi putih */
+            color: #a37acc; /* Warna teks diambil dari salah satu warna gradien */
+        }
+
+        /* Efek untuk Tombol Kedua (Read More) */
+        .btn-secondary:hover {
+            background: var(--secondary-text); /* Latar belakang menjadi warna teks aslinya */
+            color: var(--white); /* Warna teks menjadi putih */
+        }
+
+.socials {
+    display: flex;
+    gap: 1rem;
+}
+.socials a {
+    color: var(--secondary-text);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+.socials a:hover {
+    color: var(--primary-text);
+}
+
+
+/* --- Decorative Elements (Shapes & Balloons) --- */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 0;
+}
+.circle-1 {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -100px;
+    filter: blur(15px);
+}
+.circle-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -50px;
+    right: -80px;
+    background-color: rgba(162, 146, 197, 0.3);
+}
+.circle-3 {
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 45%;
+    transform: translateY(-50%);
+    filter: blur(10px);
+}
+
+
+/* Animation for floating effect */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(10deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* --- Styles for Wishes Page (Grid Layout) --- */
+
+/* Layout utama halaman wishes */
+.wishes-main h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+}
+
+.wishes-main .page-subtitle {
+    text-align: center;
+    color: var(--secondary-text);
+    margin-bottom: 3rem; /* Beri jarak lebih ke grid */
+}
+
+/* Grid container untuk 4 kartu ucapan */
+.wishes-grid {
+    display: grid;
+    /* Membuat 2 kolom dengan lebar yang sama */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem; /* Jarak antar kartu */
+}
+
+/* Styling untuk setiap kartu ucapan */
+.wish-card {
+    /* Menggunakan kembali style 'glassmorphism' */
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(170, 155, 202, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mendorong nama ke bawah */
+}
+
+/* Styling untuk teks ucapan di dalam kartu */
+.wish-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem; /* Jarak antara teks dan nama */
+}
+
+/* Styling untuk nama pengirim */
+.wish-author {
+    text-align: right;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--primary-text);
+    font-size: 1.1rem;
+}
+
+/* --- Responsive for Wishes Page --- */
+@media (max-width: 992px) {
+    .wishes-grid {
+        /* Ubah menjadi 1 kolom di layar kecil */
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- New Layout for Vertical Arrangement --- */
+
+/* Mengatur <main> agar menyusun elemen secara vertikal */
+.main-vertical-layout {
+    display: flex;
+    flex-direction: column; /* Kunci utama: Menyusun dari atas ke bawah */
+    align-items: center;   /* Pusatkan semua konten secara horizontal */
+    gap: 2rem;             /* Jarak antara blok atas dan bawah */
+}
+
+/* Memastikan judul mengambil lebar penuh dan teksnya di tengah */
+.main-vertical-layout .content-left {
+    width: 100%;
+    text-align: center;
+    flex-basis: auto; /* Hapus basis ukuran lama */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memastikan podium juga di tengah */
+}
+
+/* Wrapper untuk dua kotak konten di bawah */
+.bottom-content-wrapper {
+    display: flex;
+    justify-content: center; /* Sejajarkan kotak-kotaknya */
+    align-items: stretch;    /* Buat tinggi kedua kotak sama */
+    gap: 2rem;               /* Jarak antar kotak */
+    width: 100%;
+}
+
+/* Mengatur ukuran masing-masing kotak di bawah */
+.bottom-content-wrapper .content-right {
+    flex-basis: 50%; /* Masing-masing kotak mengambil 50% lebar */
+    max-width: 500px;
+}
+
+/* Membuatnya responsif di layar kecil */
+@media (max-width: 992px) {
+    .bottom-content-wrapper {
+        flex-direction: column; /* Susun kotak secara vertikal di layar kecil */
+        align-items: center;
+    }
+}
